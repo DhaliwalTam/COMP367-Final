@@ -1,6 +1,15 @@
 pipeline {
     agent any
     stages {
+       
+        stage('Log Branch Name') {
+            steps {
+                script {
+                    def branchName = env.BRANCH_NAME
+                    echo "Branch name detected: ${branchName}"
+                }
+            }
+        }
         stage('Checkout') {
             steps {
                 // Check out the code from Git repository
