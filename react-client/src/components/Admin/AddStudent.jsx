@@ -48,6 +48,7 @@ function AddStudent() {
     });
     } catch (error) {
       console.error('Error creating student:', error);
+      console.log('Error creating student:', error);
       return next(error);
     }
   };
