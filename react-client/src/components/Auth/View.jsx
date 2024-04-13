@@ -25,10 +25,12 @@ function View({ screen, setScreen, isLoggedIn }) {
   // of cookie specific response from the server.
   const verifyCookie = async () => {
     try {
+      console.log('Sending request to verify cookie...');
       const res = await axios.get('/api/welcome');
       console.log(res.data)
       setData(res.data);
     } catch (e) {
+      console.error('Error occurred while verifying cookie:', e);
       console.log(e);
     }
   }
