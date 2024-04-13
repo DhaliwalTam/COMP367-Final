@@ -1,15 +1,7 @@
 pipeline {
     agent any
     stages {
-       
-        stage('Log Branch Name') {
-            steps {
-                script {
-                    def branchName = env.BRANCH_NAME
-                    echo "Branch name detected: ${branchName}"
-                }
-            }
-        }
+    
         stage('Checkout') {
             steps {
                 // Check out the code from Git repository
@@ -60,36 +52,28 @@ pipeline {
             }
         }
         stage('Deploy to Dev Env') {
-            when {
-                branch 'main'
-            }
+            
             steps {
                 // Step to deploy artifact to Dev environment
                 bat 'echo "Deploying artifact to Dev environment"'
             }
         }
         stage('Deploy to QAT Env') {
-            when {
-                branch 'main'
-            }
+          
             steps {
                 // Step to deploy artifact to QAT environment
                 bat 'echo "Deploying artifact to QAT environment"'
             }
         }
         stage('Deploy to Staging Env') {
-            when {
-                branch 'main'
-            }
+            
             steps {
                 // Step to deploy artifact to Staging environment
                 bat 'echo "Deploying artifact to Staging environment"'
             }
         }
         stage('Deploy to Production Env') {
-            when {
-                branch 'main'
-            }
+           
             steps {
                 // Step to deploy artifact to Production environment
                 bat 'echo "Deploying artifact to Production environment"'
