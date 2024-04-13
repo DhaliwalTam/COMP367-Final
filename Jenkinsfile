@@ -24,7 +24,7 @@ pipeline {
                 bat 'npm run coverage || exit 0'
                 }
             }
-        }
+        
         stage('Code Static Analysis') {
             steps {
                 bat 'npm run lint'
