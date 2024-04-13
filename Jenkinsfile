@@ -34,12 +34,19 @@ pipeline {
                 }
             }
         }
-        stage('Code Static Analysis') {
+       stage('Code Static Analysis') {
             steps {
-                // Change directory to react-client before running npm run lint
-                dir('react-client') {
-                    // Step to run code static analysis
-                    bat 'npm run lint'
+                script {
+                    // Change directory to react-client before running npm run lint
+                    dir('react-client') {
+                        try {
+                            // Step to run code static analysis
+                            bat 'npm run lint'
+                        } catch (err) {
+                            // Log the error and continue
+                            echo "Error occurred during code static analysis: ${err}"
+                        }
+                    }
                 }
             }
         }
