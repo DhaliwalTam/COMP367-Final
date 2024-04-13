@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the code from Git repository
-                git 'https://github.com/DhaliwalTam/COMP367-Final'
+              git branch: 'master', url: 'https://github.com/DhaliwalTam/COMP367-Final'
             }
         }
         stage('Build') {
