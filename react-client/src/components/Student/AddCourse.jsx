@@ -16,6 +16,7 @@ function AddCourse() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCourseData({ ...courseData, [name]: value });
+    console.log('Course data set successfully!');
   };
 
   const handleSubmit = async (e) => {
@@ -23,6 +24,7 @@ function AddCourse() {
     try {
       const response = await axios.post('/api/courses', courseData);
       console.log('Course created:', response.data);
+      console.log('Course added successfully!');
       setSuccessMessage('Course added successfully!');
     } catch (error) {
       console.error('Error creating course:', error);
