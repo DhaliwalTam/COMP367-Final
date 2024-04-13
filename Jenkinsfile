@@ -56,7 +56,7 @@ pipeline {
             }
             steps {
                 // Step to deploy artifact to Dev environment
-                sh 'echo "Deploying artifact to Dev environment"'
+                bat 'echo "Deploying artifact to Dev environment"'
             }
         }
         stage('Deploy to QAT Env') {
@@ -65,7 +65,7 @@ pipeline {
             }
             steps {
                 // Step to deploy artifact to QAT environment
-                sh 'echo "Deploying artifact to QAT environment"'
+                bat 'echo "Deploying artifact to QAT environment"'
             }
         }
         stage('Deploy to Staging Env') {
@@ -74,7 +74,7 @@ pipeline {
             }
             steps {
                 // Step to deploy artifact to Staging environment
-                sh 'echo "Deploying artifact to Staging environment"'
+                bat 'echo "Deploying artifact to Staging environment"'
             }
         }
         stage('Deploy to Production Env') {
@@ -83,7 +83,7 @@ pipeline {
             }
             steps {
                 // Step to deploy artifact to Production environment
-                sh 'echo "Deploying artifact to Production environment"'
+                bat 'echo "Deploying artifact to Production environment"'
             }
         }
     }
