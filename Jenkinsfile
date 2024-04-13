@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out the code from Git repository
-              git branch: 'master', url: 'https://github.com/DhaliwalTam/COMP367-Final'
+                git 'https://github.com/DhaliwalTam/COMP367-Final'
             }
         }
         stage('Build') {
@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Deploy to Dev Env') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 // Step to deploy artifact to Dev environment
@@ -61,7 +61,7 @@ pipeline {
         }
         stage('Deploy to QAT Env') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 // Step to deploy artifact to QAT environment
@@ -70,7 +70,7 @@ pipeline {
         }
         stage('Deploy to Staging Env') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 // Step to deploy artifact to Staging environment
@@ -79,7 +79,7 @@ pipeline {
         }
         stage('Deploy to Production Env') {
             when {
-                branch 'master'
+                branch 'main'
             }
             steps {
                 // Step to deploy artifact to Production environment
