@@ -9,8 +9,7 @@ function Home(props) {
         <div>
 
             <h1>Welcome to MERN Stack Student/Course System</h1>
-            <p>Manage student and course information with ease!</p>
-
+            <p>Effortlessly organize and streamline student and course data, simplifying administrative tasks and enhancing productivity!</p>
         </div>
     );
 
